@@ -3,10 +3,14 @@ import { Image, Pressable, Text, View } from 'react-native';
 import { fetchProducts } from '../networking/products-list';
 import { Product } from '../model/product';
 import { HotelCard } from './hotel-card';
+import { useDispatch } from 'react-redux';
 
 const HomeView = (): JSX.Element => {
   const [product, setProducts] = useState<Product[]>([]);
+  const dispatch = useDispatch();
+  
 
+  //To fetch initial resturent data
   useEffect(() => {
     fetchProducts().then(products => {
       console.log({ products });
@@ -15,16 +19,14 @@ const HomeView = (): JSX.Element => {
   }, []);
 
   const handleOnPressHotelCard = (item: Product) => {
-    console.log({itemName: item.name})
-  }
+    console.log({ itemName: item.name });
+  };
 
-  const imageURI = product[0] && { uri: product[0].image };
-  console.log({ imageURI });
   return (
     <View>
       {product.map((item: Product) => (
-        <Pressable onPress={() => handleOnPressHotelCard(item)}>
-          <HotelCard key={item.id} product={item} />
+        <Pressable key={item.id} onPress={() => handleOnPressHotelCard(item)}>
+          <HotelCard product={item} />
         </Pressable>
       ))}
     </View>
