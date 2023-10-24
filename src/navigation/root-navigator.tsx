@@ -1,20 +1,17 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text, View } from 'react-native';
+import { CreatAccount } from '../modules/authentication';
+import { HomeView } from '../modules/home';
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
+//Screens
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="HomeView" component={HomeView} />
+      <Stack.Screen name="CreateAccount" component={CreatAccount} />
     </Stack.Navigator>
   );
 };
