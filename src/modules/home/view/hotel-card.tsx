@@ -8,10 +8,10 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import { Product } from '../model/product';
+import { Restaurent } from '../../../model';
 
 interface HotelCardProps {
-  product: Product;
+  product: Restaurent;
 }
 
 const HotelCard = (props: HotelCardProps): JSX.Element => {

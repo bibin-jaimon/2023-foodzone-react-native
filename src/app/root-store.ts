@@ -5,8 +5,10 @@ import { itemDetailSlice } from '../modules/item-details';
 
 const RootStore = configureStore({
   reducer: {
-    itemDetailReducer: itemDetailSlice.reducer,
+    itemDetails: itemDetailSlice.reducer,
   },
 });
 
 export { RootStore };
+export type RootState = ReturnType<typeof RootStore.getState>;
+export type AppDispatch = typeof RootStore.dispatch;
