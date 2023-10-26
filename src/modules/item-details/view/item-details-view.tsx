@@ -39,6 +39,7 @@ const ItemDetailsViewContainer = (props: ItemDetailsViewProps): JSX.Element => {
           dispatch(cartSlice.actions.updateCount({ id: cuisine.id, count }));
         }
       }
+      dispatch(cartSlice.actions.updateCartItemCount())
     };
 
   return (
