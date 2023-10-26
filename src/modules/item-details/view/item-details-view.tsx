@@ -4,6 +4,7 @@ import { RestaurentCard } from '../../../components';
 import { CusinieCard } from './cusinie-card';
 import { cartSlice } from '../../cart';
 import { Cuisine, Restaurent } from '../../../model';
+import Animated from 'react-native-reanimated';
 
 interface ItemDetailsViewProps {}
 
@@ -39,13 +40,17 @@ const ItemDetailsViewContainer = (props: ItemDetailsViewProps): JSX.Element => {
           dispatch(cartSlice.actions.updateCount({ id: cuisine.id, count }));
         }
       }
-      dispatch(cartSlice.actions.updateCartItemCount())
+      dispatch(cartSlice.actions.updateCartItemCount());
     };
 
   return (
     <ScrollView>
       <View>
-        {selectedRestaurent && <RestaurentCard product={selectedRestaurent} />}
+        {selectedRestaurent && (
+          <Animated.View sharedTransitionTag={selectedRestaurent.id}>
+            <RestaurentCard product={selectedRestaurent} />
+          </Animated.View>
+        )}
         <View style={styles.menuContainer}>
           <Text>~ MENU ~</Text>
         </View>

@@ -12,6 +12,7 @@ import { Restaurent } from '../../../model';
 import { useAppDispatch } from '../../../app/hooks';
 import { HomeNavigationProps } from '../../../navigation';
 import { RestaurentCard } from '../../../components';
+import Animated from 'react-native-reanimated';
 
 const HomeView = (): JSX.Element => {
   const [product, setProducts] = useState<Restaurent[]>([]);
@@ -33,7 +34,9 @@ const HomeView = (): JSX.Element => {
     <View>
       {product.map((item: Restaurent) => (
         <Pressable key={item.id} onPress={() => handleOnPressHotelCard(item)}>
-          <RestaurentCard product={item} />
+          <Animated.View sharedTransitionTag={`${item.id}`}>
+            <RestaurentCard product={item} />
+          </Animated.View>
         </Pressable>
       ))}
     </View>
