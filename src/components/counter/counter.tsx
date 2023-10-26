@@ -11,29 +11,25 @@ import { dimension } from '../../resources';
 
 interface CounterProp {
   onChange: (count: number) => void;
+  currentCount?: number;
 }
 
 const Counter = (props: CounterProp) => {
-  const { onChange } = props;
-  const [count, setCount] = useState<number>(0);
+  const { onChange, currentCount = 0 } = props;
+  // const [count, setCount] = useState<number>(0);
 
   const increment = () => {
-    setCount(prevState => {
-      const newCount = prevState + 1;
-      onChange(newCount);
-      return newCount;
-    });
+    const newCount = currentCount + 1;
+    // setCount(newCount);
+    onChange(newCount);
   };
 
   const decrement = () => {
-    setCount(prevState => {
-      let newCount = prevState;
-      if (newCount > 0) {
-        newCount -= 1;
-      }
+    if (currentCount > 0) {
+      let newCount = currentCount - 1;
+      // setCount(newCount);
       onChange(newCount);
-      return newCount;
-    });
+    }
   };
 
   return (
@@ -44,7 +40,7 @@ const Counter = (props: CounterProp) => {
         </Pressable>
       </View>
       <View style={styles.center}>
-        <Text>{count}</Text>
+        <Text>{currentCount}</Text>
       </View>
       <View style={styles.right}>
         <Pressable style={styles.rightButton} onPress={increment}>

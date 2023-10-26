@@ -13,10 +13,11 @@ import { Counter } from '../../../components';
 interface CusinieCardProps {
   cuisine: Cuisine;
   onChangeCount: (count: number) => void
+  itemCount?: number
 }
 
 const CusinieCard = (props: CusinieCardProps) => {
-  const { cuisine, onChangeCount } = props;
+  const { cuisine, onChangeCount, itemCount = 0 } = props;
 
   const cusinieItems = cuisine.items.join(', ');
 
@@ -31,7 +32,7 @@ const CusinieCard = (props: CusinieCardProps) => {
           {cuisine.currency}
           {cuisine.price}
         </Text>
-        <Counter onChange={onChangeCount} />
+        <Counter currentCount={itemCount} onChange={onChangeCount} />
       </View>
       <View style={styles.imageContainer}>
         <Image source={{ uri: cuisine.imageURL }} style={styles.image} />

@@ -9,6 +9,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import { Restaurent } from '../../model';
+import { dimension } from '../../resources';
 
 interface HotelCardProps {
   product: Restaurent;
@@ -23,6 +24,7 @@ const RestaurentCard = (props: HotelCardProps): JSX.Element => {
       <View style={styles.details}>
         <Text style={styles.nameText}>{item.name}</Text>
         <Text>{`Rating: ${item.rating}`}</Text>
+        <Text>{`Distance: ${item.rating} km`}</Text>
       </View>
     </View>
   );
@@ -42,7 +44,7 @@ const styles = StyleSheet.create<HotelCardStyle>({
     backgroundColor: 'white',
     marginHorizontal: 12,
     marginVertical: 8,
-    borderRadius: 8,
+    borderRadius: dimension.borderRadius.cardView,
   },
   shadow: {
     shadowOffset: { width: -2, height: 4 },
@@ -53,7 +55,7 @@ const styles = StyleSheet.create<HotelCardStyle>({
   image: {
     width: 150,
     height: 150,
-    borderRadius: 8,
+    borderRadius: dimension.borderRadius.default,
     margin: 1,
   },
   details: {
