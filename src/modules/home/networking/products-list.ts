@@ -11,7 +11,7 @@ const mockCusines: Cuisine[] = [
   },
   {
     id: 1,
-    name: 'BBQ chicken Wings',
+    name: 'BBQ chicken',
     price: 234,
     currency: '$',
     imageURL:'https://images.pexels.com/photos/12365244/pexels-photo-12365244.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -19,7 +19,7 @@ const mockCusines: Cuisine[] = [
   },
   {
     id: 2,
-    name: 'BBQ chicken Wings',
+    name: 'BBQ Wings',
     price: 234,
     currency: '$',
     imageURL:'https://images.pexels.com/photos/12365244/pexels-photo-12365244.jpeg?auto=compress&cs=tinysrgb&w=800',
