@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react';
 import { fetchProducts } from '../networking/products-list';
 
 //components
-import { HotelCard } from './hotel-card';
 
 import { itemDetailSlice } from '../../item-details';
 import { useNavigation } from '@react-navigation/native';
 import { Restaurent } from '../../../model';
 import { useAppDispatch } from '../../../app/hooks';
 import { HomeNavigationProps } from '../../../navigation';
+import { RestaurentCard } from '../../../components';
 
 const HomeView = (): JSX.Element => {
   const [product, setProducts] = useState<Restaurent[]>([]);
@@ -33,7 +33,7 @@ const HomeView = (): JSX.Element => {
     <View>
       {product.map((item: Restaurent) => (
         <Pressable key={item.id} onPress={() => handleOnPressHotelCard(item)}>
-          <HotelCard product={item} />
+          <RestaurentCard product={item} />
         </Pressable>
       ))}
     </View>

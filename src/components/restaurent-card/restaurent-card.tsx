@@ -8,13 +8,13 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import { Restaurent } from '../../../model';
+import { Restaurent } from '../../model';
 
 interface HotelCardProps {
   product: Restaurent;
 }
 
-const HotelCard = (props: HotelCardProps): JSX.Element => {
+const RestaurentCard = (props: HotelCardProps): JSX.Element => {
   const item = props.product;
 
   return (
@@ -65,4 +65,4 @@ const styles = StyleSheet.create<HotelCardStyle>({
   },
 });
 
-export { HotelCard };
+export { RestaurentCard };
