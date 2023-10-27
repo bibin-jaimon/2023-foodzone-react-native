@@ -26,4 +26,4 @@ Demo link: https://youtube.com/shorts/X5VOq8_4rTU?feature=share
 </table>
 
 
-[![IMAGE ALT TEXT HERE](doc/1.png)](https://youtube.com/shorts/X5VOq8_4rTU?feature=share)
+https://github.com/bibin-jaimon/2023-foodzone-react-native/assets/22428886/23bd555b-e526-482c-9cc0-c33da3bd9f4c
