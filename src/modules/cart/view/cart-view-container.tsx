@@ -17,6 +17,14 @@ const CartViewContainer = () => {
     return false;
   });
 
+  if (selectedCuisines?.length == 0) {
+    return (
+      <View style={styles.emptyViewContainer}>
+        <Text style={styles.heading}>Add something</Text>
+      </View>
+    );
+  }
+
   return (
     <>
       <ScrollView>
@@ -58,6 +66,11 @@ const CartViewContainer = () => {
 };
 
 const styles = StyleSheet.create({
+  emptyViewContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   container: {
     padding: 20,
     flex: 1,

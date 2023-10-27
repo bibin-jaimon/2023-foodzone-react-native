@@ -44,7 +44,6 @@ const RootNavigator = () => {
       <Stack.Screen
         name="CreateAccount"
         component={CreatAccount}
-        options={{ presentation: 'modal', headerShown: false }}
       />
       <Stack.Screen
         name="Cart"

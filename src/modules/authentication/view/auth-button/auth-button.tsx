@@ -5,7 +5,7 @@ interface AuthButtonProps {
 }
 const AuthButton = (props: AuthButtonProps) => {
   const { onPress } = props;
-  const buttonText: string = 'Signin';
+  const buttonText: string = 'Sign In';
   return (
     <View>
       <Pressable onPress={onPress}>
