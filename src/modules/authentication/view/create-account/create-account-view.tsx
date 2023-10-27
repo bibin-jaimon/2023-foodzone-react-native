@@ -1,18 +1,20 @@
-import { Pressable, Text, TextInput, View } from 'react-native';
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
 const CreatAccount = (): JSX.Element => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={styles.contanier}>
       <TextInput
         placeholder="username"
-        style={{ margin: 10, padding: 10, borderWidth: 1, width: '60%' }}
+        placeholderTextColor={'black'}
+        style={styles.textInput}
       />
       <TextInput
         placeholder="password"
-        style={{ margin: 10, padding: 10, borderWidth: 1, width: '60%' }}
+        placeholderTextColor={'black'}
+        style={styles.textInput}
       />
       <Pressable
-        style={{ margin: 15, padding: 10, borderWidth: 1, width: '50%' }}
+        style={styles.authButton}
         onPress={() => {
           console.log('auth success');
         }}>
@@ -21,5 +23,30 @@ const CreatAccount = (): JSX.Element => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  contanier: {
+    flex: 1,
+    alignItems: 'center',
+    marginTop: 60
+  },
+  textInput: {
+    margin: 10,
+    padding: 10,
+    borderBottomWidth: 1,
+    width: '80%',
+    height: 60,
+    borderRadius: 10,
+  },
+  authButton: {
+    justifyContent: 'center',
+    borderRadius: 10,
+    margin: 15,
+    padding: 10,
+    borderWidth: 1,
+    height: 60,
+    width: '60%',
+  },
+});
 
 export { CreatAccount };
